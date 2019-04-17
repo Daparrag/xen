@@ -458,6 +458,12 @@ static int __init nmi_init(void)
 	return 0;
 }
 
+
+int nmi_enable_user(void)
+{
+	return 0;
+}
+
 __initcall(nmi_init);
 
 int xenoprof_arch_init(int *num_events, char *_cpu_type)

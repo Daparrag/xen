@@ -1,5 +1,5 @@
 subdir-y += lib
-
+subdir-$(CONFIG_XENOPROF) += oprofile
 obj-y += cache.o
 obj-$(CONFIG_HARDEN_BRANCH_PREDICTOR) += bpi.o
 obj-$(EARLY_PRINTK) += debug.o

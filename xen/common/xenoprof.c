@@ -695,6 +695,10 @@ ret_t do_xenoprof_op(int op, XEN_GUEST_HANDLE_PARAM(void) arg)
         return -EPERM;
     }
 
+    if(xenoprof_state == XENOPROF_USER_HANDLER) 
+        return ret; /*user is controlling the pmu unit*/
+
+
     ret = xsm_profile(XSM_HOOK, current->domain, op);
     if ( ret )
         return ret;
@@ -906,7 +910,10 @@ ret_t do_xenoprof_op(int op, XEN_GUEST_HANDLE_PARAM(void) arg)
     case XENOPROF_get_ibs_caps:
         ret = ibs_caps;
         break;
-
+    case XENOPROF_enable_user:
+         xenoprof_state =XENOPROF_USER_HANDLER;
+         ret = xenoprof_arch_enable_user();
+         break;
     default:
         ret = -ENOSYS;
     }

@@ -1,6 +1,8 @@
 #ifndef __ASM_XENOPROF_H__
 #define __ASM_XENOPROF_H__
 
+#include "arm64/xenoprof.h"
+
 #endif /* __ASM_XENOPROF_H__ */
 /*
  * Local variables:

@@ -54,7 +54,10 @@
 /* AMD IBS support */
 #define XENOPROF_get_ibs_caps       16
 #define XENOPROF_ibs_counter        17
-#define XENOPROF_last_op            17
+/*ARM specific_op*/
+#define XENOPROF_enable_user        18
+
+#define XENOPROF_last_op            18
 
 #define MAX_OPROF_EVENTS    32
 #define MAX_OPROF_DOMAINS   25

@@ -17,6 +17,7 @@
 #define PMU_OWNER_NONE          0
 #define PMU_OWNER_XENOPROF      1
 #define PMU_OWNER_HVM           2
+#define PMU_OWNER_USER          3
 
 #ifdef CONFIG_XENOPROF
 
@@ -29,6 +30,8 @@
 #define XENOPROF_COUNTERS_RESERVED 2
 #define XENOPROF_READY             3
 #define XENOPROF_PROFILING         4
+#define XENOPROF_USER_HANDLER      5
+
 
 #ifndef CONFIG_COMPAT
 typedef struct xenoprof_buf xenoprof_buf_t;
